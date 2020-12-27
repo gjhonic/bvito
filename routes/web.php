@@ -31,12 +31,17 @@ Route::get('/contact', function () {
 });
 // < - -
 
-Route::get('/ads', function () {
-    $ads = DB::table('ad')->get();
-    return view('ads', compact('ads'));
-});
+//Ad Pages - - >
+Route::get('/ads', 'AdController@index');
+Route::get('/ad/{ad}', 'AdController@view');
+// < - -
 
-Route::get('/ad/{ad}', function ($id) {
-    $ad = DB::table('ad')->find($id);
-    return view('ad', compact('ad'));
-});
+// Route::get('/ads', function () {
+//     $ads = App\Ad::get_not_sold();
+//     return view('ads', compact('ads'));
+// });
+//
+// Route::get('/ad/{ad}', function ($id) {
+//     $ad = App\Ad::find($id);
+//     return view('ad', compact('ad'));
+// });

@@ -18,6 +18,7 @@ class CreateAdTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->text('description');
+            $table->boolean('sold_out');
             $table->timestamps();
         });
     }
