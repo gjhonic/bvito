@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
-@section('title-block')Главная@endsection
+@section('title-block'){{ $ad->title }}@endsection
 
 @section('content')
-<h1>Главная</h1>
+<h1>{{ $ad->title }}</h1>
+{{ $ad->description }}
 @endsection
+
 
 @section('aside')
   @parent

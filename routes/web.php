@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Homepages - - >
 Route::get('/', function () {
-    $ads = DB::table('ad')->get();
-    return view('home', compact('ads'));
+    return view('home');
 });
 
 Route::get('/home', function () {
@@ -28,4 +28,15 @@ Route::get('/about', function () {
 
 Route::get('/contact', function () {
     return view('contact');
+});
+// < - -
+
+Route::get('/ads', function () {
+    $ads = DB::table('ad')->get();
+    return view('ads', compact('ads'));
+});
+
+Route::get('/ad/{ad}', function ($id) {
+    $ad = DB::table('ad')->find($id);
+    return view('ad', compact('ad'));
 });
