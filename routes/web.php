@@ -14,34 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Homepages - - >
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/index', 'HomeController@index');
+Route::get('/about', 'HomeController@about');
+Route::get('/contact', 'HomeController@contact');
 // < - -
 
 //Ad Pages - - >
 Route::get('/ads', 'AdController@index');
 Route::get('/ad/{ad}', 'AdController@view');
 // < - -
-
-// Route::get('/ads', function () {
-//     $ads = App\Ad::get_not_sold();
-//     return view('ads', compact('ads'));
-// });
-//
-// Route::get('/ad/{ad}', function ($id) {
-//     $ad = App\Ad::find($id);
-//     return view('ad', compact('ad'));
-// });
