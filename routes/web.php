@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $ads = DB::table('ad')->get();
+    return view('home', compact('ads'));
 });
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
