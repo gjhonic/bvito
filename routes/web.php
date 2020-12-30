@@ -22,5 +22,7 @@ Route::get('/contact', 'HomeController@contact');
 
 //Ad Pages - - >
 Route::get('/ads', 'AdController@index');
+Route::get('/ads/create', 'AdController@create_form');
+Route::post('/ads/create', 'AdController@create');
 Route::get('/ad/{ad}', 'AdController@view');
 // < - -
