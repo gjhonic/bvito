@@ -2,27 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdController;
 
 // Homepages - - >
-Route::get('/', 'HomeController@index');
-Route::get('/index', 'HomeController@index');
-Route::get('/about', 'HomeController@about');
-Route::get('/contact', 'HomeController@contact');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/index', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/contact', [HomeController::class, 'contact']);
 // < - -
 
 //Ad Pages - - >
-Route::get('/ads', 'AdController@index');
-Route::get('/ads/create', 'AdController@create_form');
-Route::post('/ads/create', 'AdController@create');
-Route::get('/ad/{ad}', 'AdController@view');
+Route::get('/ads', [AdController::class, 'index']);
+Route::get('/ads/create', [AdController::class, 'create_form']);
+Route::post('/ads/create', [AdController::class, 'create']);
+Route::get('/ad/{ad}', [AdController::class, 'view']);
 // < - -

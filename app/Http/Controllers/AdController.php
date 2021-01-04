@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App;
+use App\Models\Ad;
 
 class AdController extends Controller{
 
     //Список обьявлений
     public function index(){
-      $ads = App\Ad::get_not_sold();
+      $ads = Ad::get_not_sold();
       return view('ads/index', compact('ads'));
     }
 
     //Просмотр обьявления
     public function view($id){
-      $ad = App\Ad::find($id);
+      $ad = Ad::find($id);
       return view('ads/view', compact('ad'));
     }
 
     //Форма добавления обьявления
     public function create_form(){
-      $ad = App\Ad::find($id);
-      return view('ads/view', compact('ad'));
+      return view('ads/create');
     }
 
     //Сохранение формы
-    public function create_form(){
-      $ad = App\Ad::find($id);
+    public function create(){
+      $ad = Ad::find($id);
       return view('ads/view', compact('ad'));
     }
 }
