@@ -6,7 +6,7 @@
 <h1>Обьявления</h1>
 
 <p>
-  <a href="ads/create" class="btn btn-success btn-lg">Создать обьявление</a>
+  <a href="ad/create" class="btn btn-success btn-lg">Создать обьявление</a>
 </p>
 
   @foreach($ads as $ad)

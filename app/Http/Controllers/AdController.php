@@ -26,8 +26,13 @@ class AdController extends Controller{
     }
 
     //Сохранение формы
-    public function create(){
-      $ad = Ad::find($id);
-      return view('ads/view', compact('ad'));
+    public function save(Request $request){
+      $ad = new Ad();
+      $ad->title = $request->title;
+      $ad->description = $request->description;
+      $ad->user_id = 1;
+      $ad->sold_out = 0;
+      $ad->save();
+      return view('ad/'.$ad->id);
     }
 }

@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+  public $id;
+  public $title;
+  public $description;
+  public $user_id;
+  public $sold_out;
+
   //TableName
   protected $table = 'ad';
 
