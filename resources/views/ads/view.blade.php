@@ -10,7 +10,7 @@
   <hr class="my-4">
   <p>{{ $ad->getUser()->name }}</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Редактировать</a>
+    <a class="btn btn-primary btn-lg" href="/ads/update/{{ $ad->id }}" role="button">Редактировать</a>
   </p>
 </div>
 
