@@ -3,19 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\MyUser;
 
 class Ad extends Model
 {
-  public $id;
-  public $title;
-  public $description;
-  public $user_id;
-  public $sold_out;
 
-  //TableName
+  //tableName
   protected $table = 'ad';
 
-  public static function get_not_sold(){
+  //return list ads which sold out equal 0
+  public static function getNotSold(){
     return static::where('sold_out', 0)->get();
+  }
+
+  //return user which added ads
+  public function getUser(){
+    $user = new MyUser();
+    $user->name = "Евгеша";
+    return $user;
   }
 }

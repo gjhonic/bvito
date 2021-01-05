@@ -3,12 +3,19 @@
 @section('title-block'){{ $ad->title }}@endsection
 
 @section('content')
-<h1>{{ $ad->title }}</h1>
-{{ $ad->description }}
-@endsection
 
+<div class="jumbotron">
+  <h1 class="display-4">{{ $ad->title }}</h1>
+  <p class="lead">{{ $ad->description }}</p>
+  <hr class="my-4">
+  <p>{{ $ad->getUser()->name }}</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Редактировать</a>
+  </p>
+</div>
 
-@section('aside')
-  @parent
-  <p>Дополнительный текст</p>
+<p>
+  <a href="/ad" class="btn btn-primary">Назад к обьявлениям</a>
+</p>
+
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ad;
@@ -10,7 +11,7 @@ class AdController extends Controller{
 
     //Список обьявлений
     public function index(){
-      $ads = Ad::get_not_sold();
+      $ads = Ad::getNotSold();
       return view('ads/index', compact('ads'));
     }
 
@@ -33,6 +34,6 @@ class AdController extends Controller{
       $ad->user_id = 1;
       $ad->sold_out = 0;
       $ad->save();
-      return view('ad/'.$ad->id);
+      return redirect('/ad/'.$ad->id);
     }
 }
