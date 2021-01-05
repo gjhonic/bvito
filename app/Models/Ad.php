@@ -12,8 +12,8 @@ class Ad extends Model
   protected $table = 'ad';
 
   //return list ads which sold out equal 0
-  public static function getNotSold(){
-    return static::where('sold_out', 0)->get();
+  public static function getNotSold($order="desc"){
+    return static::where('sold_out', 0)->orderBy('id', $order)->get();
   }
 
   //return user which added ads
