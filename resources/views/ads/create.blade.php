@@ -5,7 +5,7 @@
 	@section('content')
 		<h1>Создание обьявления</h1>
 
-	  {{ Form::open(array('url' => 'ad/save')) }}
+	  {{ Form::open(array('url' => 'ads/save')) }}
 
 			<div class="form-group">
 				<label for="title">Название Обьявления</label>

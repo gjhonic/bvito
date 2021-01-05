@@ -13,8 +13,10 @@ Route::get('/contact', [HomeController::class, 'contact']);
 // < - -
 
 //Ad Pages - - >
-Route::get('/ad', [AdController::class, 'index']);
-Route::get('/ad/create', [AdController::class, 'create_form']);
-Route::post('/ad/save', [AdController::class, 'save']);
-Route::get('/ad/{ad}', [AdController::class, 'view']);
+Route::get('/ads/list', [AdController::class, 'index']);
+Route::get('/ads', [AdController::class, 'index']);
+Route::get('/ads/create', [AdController::class, 'create_form']);
+Route::post('/ads/save', [AdController::class, 'save']);
+Route::get('/ads/{ad}', [AdController::class, 'view']);
+Route::get('/ads/update/{ad}', [AdController::class, 'update']);
 // < - -

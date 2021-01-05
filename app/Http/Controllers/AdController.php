@@ -34,6 +34,6 @@ class AdController extends Controller{
       $ad->user_id = 1;
       $ad->sold_out = 0;
       $ad->save();
-      return redirect('/ad/'.$ad->id);
+      return redirect('/ads/'.$ad->id);
     }
 }
