@@ -5,6 +5,6 @@
     <a class="p-2 text-dark" href="/">Главная</a>
     <a class="p-2 text-dark" href="/about">О нас</a>
     <a class="p-2 text-dark" href="/contact">Контакты</a>
-    <a class="p-2 text-dark" href="/ads">Обьявления</a>
+    <a class="p-2 text-dark" href="/ads">Объявления</a>
   </nav>
 </div>

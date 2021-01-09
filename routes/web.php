@@ -12,6 +12,8 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
 // < - -
 
+
+
 //Ad Pages - - >
 Route::get('/ads/list', [AdController::class, 'index']);
 Route::get('/ads', [AdController::class, 'index']);

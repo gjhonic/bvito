@@ -16,7 +16,7 @@
 </div>
 
 <p>
-  <a href="/ads" class="btn btn-primary">Назад к обьявлениям</a>
+  <a href="/ads" class="btn btn-primary">Назад к объявлениям</a>
 </p>
 
 @endsection

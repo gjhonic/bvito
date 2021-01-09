@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title-block')Создание обьявления@endsection
+@section('title-block')Создание объявления@endsection
 
 	@section('content')
-		<h1>Создание обьявления</h1>
+		<h1>Создание объявления</h1>
 
 	  {{ Form::open(array('url' => 'ads/save')) }}
 
 			<div class="form-group">
-				<label for="title">Название Обьявления</label>
+				<label for="title">Название Объявления</label>
 				<input type="text" class="form-control" id="title" name="title">
 			</div>
 			<div class="form-group">

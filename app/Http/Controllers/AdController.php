@@ -9,24 +9,24 @@ use App\Models\Ad;
 
 class AdController extends Controller{
 
-    //Список обьявлений
+    //Список объявлений
     public function index(){
       $ads = Ad::getNotSold();
       return view('ads/index', compact('ads'));
     }
 
-    //Просмотр обьявления
+    //Просмотр объявления
     public function view($id){
       $ad = Ad::find($id);
       return view('ads/view', compact('ad'));
     }
 
-    //Форма добавления обьявления
+    //Форма добавления объявления
     public function create_form(){
       return view('ads/create');
     }
 
-    //Форма изменения обьявления
+    //Форма изменения объявления
     public function update_form($id){
       $ad = Ad::find($id);
       return view('ads/update', compact('ad'));
@@ -52,7 +52,7 @@ class AdController extends Controller{
       return redirect('/ads/'.$ad->id);
     }
 
-    //Метод удаления обьявления
+    //Метод удаления объявления
     public function delete($id){
       $ad = Ad::find($id);
       $ad->delete();

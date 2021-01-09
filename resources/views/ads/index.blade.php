@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title-block')Обьявления@endsection
+@section('title-block')Объявления@endsection
 
 @section('content')
-<h1>Обьявления</h1>
+<h1>Объявления</h1>
 
 <p>
-  <a href="ads/create" class="btn btn-success btn-lg">Создать обьявление</a>
+  <a href="ads/create" class="btn btn-success btn-lg">Создать объявление</a>
 </p>
 
   @foreach($ads as $ad)
