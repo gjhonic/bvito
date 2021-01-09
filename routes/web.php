@@ -10,6 +10,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/me', [HomeController::class, 'me']);
+
+Route::get('/signin', [HomeController::class, 'signin']);
+Route::post('/signin_proc', [HomeController::class, 'signin_proc']);
+Route::get('/signup', [HomeController::class, 'signup']);
+Route::post('/signup_proc', [HomeController::class, 'signup_proc']);
+Route::get('/signout', [HomeController::class, 'signout']);
 // < - -
 
 
