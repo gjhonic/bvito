@@ -11,6 +11,7 @@
   <p>{{ $ad->getUser()->name }}</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="/ads/update/{{ $ad->id }}" role="button">Редактировать</a>
+    <a class="btn btn-danger btn-lg" href="/ads/delete/{{ $ad->id }}" role="button">Удалить</a>
   </p>
 </div>
 

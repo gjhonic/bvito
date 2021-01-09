@@ -51,4 +51,11 @@ class AdController extends Controller{
       $ad->save();
       return redirect('/ads/'.$ad->id);
     }
+
+    //Метод удаления обьявления
+    public function delete($id){
+      $ad = Ad::find($id);
+      $ad->delete();
+      return redirect('/ads');
+    }
 }

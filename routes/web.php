@@ -20,4 +20,5 @@ Route::post('/ads/save', [AdController::class, 'save']);
 Route::get('/ads/{ad}', [AdController::class, 'view']);
 Route::get('/ads/update/{ad}', [AdController::class, 'update_form']);
 Route::post('/ads/update/{ad}', [AdController::class, 'update']);
+Route::get('/ads/delete/{ad}', [AdController::class, 'delete']);
 // < - -
