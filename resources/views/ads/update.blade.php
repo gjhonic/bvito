@@ -12,6 +12,10 @@
 				<input type="text" class="form-control" id="title" name="title" value="{{ $ad->title }}">
 			</div>
 			<div class="form-group">
+				<label for="title">Price</label>
+				<input type="text" class="form-control" id="title" name="price" value="{{ $ad->price }}">
+			</div>
+			<div class="form-group">
     		<label for="description">Описание</label>
     		<textarea class="form-control" id="description" rows="3" name="description">{{ $ad->description }}</textarea>
   		</div>

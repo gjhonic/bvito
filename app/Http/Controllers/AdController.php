@@ -18,6 +18,8 @@ class AdController extends Controller{
     //Просмотр объявления
     public function view($id){
       $ad = Ad::find($id);
+      $ad->views +=1;
+      $ad->update();
       return view('ads/view', compact('ad'));
     }
 
@@ -37,6 +39,7 @@ class AdController extends Controller{
       $ad = Ad::find($id);
       $ad->title = $request->title;
       $ad->description = $request->description;
+      $ad->price = $request->price;
       $ad->update();
       return redirect('/ads/'.$ad->id);
     }
@@ -47,6 +50,8 @@ class AdController extends Controller{
       $ad->title = $request->title;
       $ad->description = $request->description;
       $ad->user_id = 1;
+      $ad->price = $request->price;
+      $ad->views = 0;
       $ad->sold_out = 0;
       $ad->save();
       return redirect('/ads/'.$ad->id);

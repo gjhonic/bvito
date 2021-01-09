@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MyUser;
+use App\Models\Ad;
 use App\Models\UserIdentity;
 
 class HomeController extends Controller{
@@ -13,7 +14,8 @@ class HomeController extends Controller{
 
   //Главная страница
   public function index(){
-    return view('homepages/index');
+    $ads = Ad::getFamouse();
+    return view('homepages/index', ['ads' => $ads]);
   }
 
   //Страница о нас
@@ -71,9 +73,15 @@ class HomeController extends Controller{
   //Метод аутентификации
   public function signin_proc(Request $request){
 
-    echo "34213";
-    die;
-    //return redirect('/ads/'.$ad->id);
+    if($request->username != null || $request->password != null){
+      $user = MyUser::where('username', $request->username)->first();
+      if($user->password == $request->password){
+        UserIdentity::setUserIdentity($request, $user);
+        return redirect('/me');
+      }
+    }
+
+    return redirect('/signin');
   }
 
 }

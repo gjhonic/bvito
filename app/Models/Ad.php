@@ -11,6 +11,10 @@ class Ad extends Model
   //tableName
   protected $table = 'ad';
 
+  public static function getFamouse($order="desc"){
+    return static::where('sold_out', 0)->orderBy('id', $order)->get();
+  }
+
   //return list ads which sold out equal 0
   public static function getNotSold($order="desc"){
     return static::where('sold_out', 0)->orderBy('id', $order)->get();
