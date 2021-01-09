@@ -12,7 +12,7 @@ class Ad extends Model
   protected $table = 'ad';
 
   public static function getFamouse($order="desc"){
-    return static::where('sold_out', 0)->orderBy('id', $order)->get();
+    return static::where('sold_out', 0)->orderBy('views', $order)->get();
   }
 
   //return list ads which sold out equal 0
@@ -22,8 +22,7 @@ class Ad extends Model
 
   //return user which added ads
   public function getUser(){
-    $user = new MyUser();
-    $user->name = "Евгеша";
+    $user = MyUser::where('id', $this->user_id)->first();
     return $user;
   }
 }

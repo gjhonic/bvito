@@ -9,7 +9,7 @@
   <title>@yield('title-block')</title>
 </head>
 <body>
-  @include('inc.header')
+  @include('front.inc.header')
 
   <div class="container mt-5">
     <div class="row">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-@include('inc.footer')
+@include('front.inc.footer')
 
 </body>
 </html>

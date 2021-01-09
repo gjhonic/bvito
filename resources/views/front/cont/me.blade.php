@@ -1,4 +1,4 @@
-@extends('layouts.personal')
+@extends('front.layouts.app')
 
 @section('title-block')Главная@endsection
 

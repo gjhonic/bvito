@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('back.layouts.app')
 
 @section('title-block'){{ $ad->title }}@endsection
 

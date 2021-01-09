@@ -14,7 +14,14 @@ class UserIdentity{
   public static function setUserIdentity(Request $request, $user){
     $nowuser['name'] = $user->name;
     $nowuser['username'] = $user->username;
+    $nowuser['id'] = $user->id;
     $request->session()->put('nowuser', $nowuser);
+  }
+
+  //Возвращает текущего пользователя
+  public static function getIdUser(Request $request){
+    $user = $request->session()->get('nowuser');
+    return $user['id'];
   }
 
   //Возвращает текущего пользователя
@@ -26,6 +33,14 @@ class UserIdentity{
   public static function removeUser(Request $request){
     $request->session()->forget('nowuser');
     $nowuser = [];
+  }
+ 
+  public static function isAuth(Request $request){
+    if ($request->session()->has('nowuser')){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }

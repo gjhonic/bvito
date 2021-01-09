@@ -9,17 +9,17 @@
   <title>@yield('title-block')</title>
 </head>
 <body>
-  @include('inc.pers_header')
+  @include('back.inc.header')
 
   <div class="container mt-5">
     <div class="row">
       <div class="col-12">
-        @yield('pers_content')
+        @yield('content')
       </div>
     </div>
   </div>
 
-@include('inc.footer')
+@include('back.inc.footer')
 
 </body>
 </html>

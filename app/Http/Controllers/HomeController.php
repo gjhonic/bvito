@@ -13,18 +13,22 @@ class HomeController extends Controller{
 
 
   //Главная страница
-  public function index(){
+  public function index(Request $request){
     $ads = Ad::getFamouse();
-    return view('homepages/index', ['ads' => $ads]);
+    if(UserIdentity::isAuth($request)){
+      return view('back/cont/index', ['ads' => $ads]);
+    }else{
+      return view('front/cont/index', ['ads' => $ads]);
+    }
   }
 
   //Страница о нас
-  public function about(){
-    return view('homepages/about');
+  public function about(Request $request){
+    return view('cont/about');
   }
 
   //Страница контакты
-  public function contact(){
+  public function contact(Request $request){
     return view('homepages/contact');
   }
 
@@ -32,21 +36,20 @@ class HomeController extends Controller{
   public function me(Request $request){
     $user = UserIdentity::nowUser($request);
     if($user != null){
-      return view('homepages/me', ['user' => $user]);
+      return view('back/cont/me', ['user' => $user]);
     }else{
       return redirect('/signin');
     }
-
   }
 
   //Форма Регистрация
   public function signup(){
-    return view('homepages/signup');
+    return view('front/cont/signup');
   }
 
   //Форма Аутентфикации
   public function signin(){
-    return view('homepages/signin');
+    return view('front/cont/signin');
   }
 
   //Метод разлогирования
