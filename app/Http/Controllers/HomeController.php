@@ -29,7 +29,12 @@ class HomeController extends Controller{
   //Личный кабинет
   public function me(Request $request){
     $user = UserIdentity::nowUser($request);
-    return view('homepages/me', ['user' => $user]);
+    if($user != null){
+      return view('homepages/me', ['user' => $user]);
+    }else{
+      return redirect('/signin');
+    }
+
   }
 
   //Форма Регистрация
@@ -42,12 +47,13 @@ class HomeController extends Controller{
     return view('homepages/signin');
   }
 
-  //Форма Аутентфикации
+  //Метод разлогирования
   public function signout(Request $request){
     UserIdentity::removeUser($request);
     return redirect('/index');
   }
 
+  //Метод сохранения нового пользователя
   public function signup_proc(Request $request){
     $user = new MyUser();
     $user->name = $request->name;
@@ -62,6 +68,7 @@ class HomeController extends Controller{
     }
   }
 
+  //Метод аутентификации
   public function signin_proc(Request $request){
 
     echo "34213";

@@ -19,7 +19,7 @@
       <label for="exampleInputPassword">Password:</label>
       <input type="password" class="form-control" id="exampleInputPassword" placeholder="" name="password">
     </div>
-    <button type="submit" class="btn btn-success">Sign up</button>
+    <button type="submit" class="btn btn-success">Sign up</button><a href="/signin" class="btn btn-light">Have account - signin</a>
 
   {{ Form::close() }}
 

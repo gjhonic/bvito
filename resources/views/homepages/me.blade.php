@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.personal')
 
 @section('title-block')Главная@endsection
 
-@section('content')
+@section('pers_content')
 
 <h1>Дарова {{ $user['name'] }} </h1>
 
